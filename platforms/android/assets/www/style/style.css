@@ -1,0 +1,313 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+form,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0px;
+  padding: 0px;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font: normal 100% Arial;
+  color: #333333;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333333;
+}
+a:hover {
+  text-decoration: none;
+}
+img {
+  border: 0;
+  max-width: 100%;
+  -ms-interpolation-mode: bicubic;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  vertical-align: middle;
+  outline: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+.p_css3 {
+  -webkit-transition: 1s ease all;
+}
+* {
+  word-wrap: break-word;
+}
+/*去掉某些安卓版本的触摸高亮*/
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:hover {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/*直接修改这个参数即可快速替换皮肤*/
+.p_tac {
+  text-align: center;
+}
+.p_fl {
+  float: left;
+}
+.p_fr {
+  float: right;
+}
+#afui {
+  background: #444444;
+}
+#afui .panel {
+  background: #e1e1e1;
+}
+#afui .afScrollbar {
+  opacity: .1;
+}
+#afui #header {
+  background: #444444;
+  border-bottom: none;
+}
+#afui #header h1#logo {
+  background: url(../res/cnodejs_light.svg) center no-repeat;
+  background-size: 100% 100%;
+}
+#afui #header .hd_logo {
+  position: absolute;
+  z-index: 99;
+  left: 50%;
+  width: 105px;
+  margin-left: -52px;
+  top: 5px;
+}
+#afui #header .menuButton {
+  float: left;
+  width: 44px;
+  height: 44px;
+  top: 0px;
+  right: 0px;
+}
+#afui #header .menuButton:after {
+  top: 14px;
+  left: 12px;
+  width: 20px;
+}
+#afui #header .menuButton.pressed {
+  background: #2c2c2c !important;
+}
+#afui #header .backButton {
+  width: 44px;
+  height: 44px;
+  top: 0px;
+  left: 0px;
+  border: none;
+  border-radius: 0px;
+}
+#afui #header .backButton::before {
+  left: 13px;
+}
+#afui #header .backButton.pressed {
+  background: #2c2c2c !important;
+}
+#afui #aside_menu,
+#afui #menu.tabletMenu {
+  background: #444444;
+  border: none;
+}
+#afui #navbar {
+  background: #444444;
+  border: none;
+}
+#afui #navbar a {
+  top: 0px;
+  height: 49px;
+  line-height: 75px;
+}
+#afui #navbar a .iconfont {
+  position: absolute;
+  top: 0px;
+  line-height: 35px;
+  left: 0;
+  margin: auto;
+  width: 100%;
+}
+#afui #navbar a.pressed:not(.button) {
+  background: #2c2c2c;
+}
+/*通用弹出框样式*/
+#afui #pops {
+  border: none;
+  background: #444444;
+}
+#afui #pops header {
+  text-align: center;
+  color: #FFF;
+}
+#afui #pops > div {
+  color: #FFF;
+  text-align: center;
+}
+#afui #pops footer .button {
+  border: none !important;
+}
+#afui #pops footer .button.pressed {
+  background: #dd0000;
+  color: #FFF;
+}
+/* 卡片 */
+#afui ul.card li {
+  background: #FFF;
+  padding: 10px;
+  box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  margin-bottom: 15px;
+}
+#afui .p_pt10 {
+  padding-top: 10px;
+}
+#afui .p_mr5 {
+  margin: 5px;
+}
+#afui .p_plr20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#afui .cnode_box {
+  width: 100%;
+}
+#afui .cnode_box .cnode_header {
+  width: 100%;
+}
+#afui .cnode_box .cnode_header .avater {
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+}
+#afui .cnode_box .cnode_header .avater img {
+  width: 2em;
+  height: 2em;
+  border-radius: 2em;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+#afui .cnode_box .cnode_header .name {
+  width: 6em;
+  height: 2em;
+  line-height: 2em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#afui .cnode_box .cnode_header .status {
+  height: 2em;
+  line-height: 2em;
+  margin: 5px;
+  padding: 0px 10px;
+  font-size: .8em;
+  background: #80bd01;
+  border-radius: 3px;
+  color: #fff;
+}
+#afui .cnode_box .cnode_content {
+  padding: 5px 0px;
+}
+#afui #info .infobox {
+  background: #FFF;
+  padding: 10px;
+  box-shadow: 1px 1px 2px 3px rgba(232, 232, 232, 0.4);
+  border-radius: 0px;
+  margin: -10px -10px 10px -10px;
+}
+#afui #info .infobox #info_tit {
+  text-align: left;
+}
+#afui #info .infobox .other {
+  border-bottom: 1px solid #e1e1e1;
+  margin: 0px;
+  padding: 6px 20px;
+}
+#afui #info .infobox #info_txt .markdown-text p,
+#afui #info .infobox #info_txt .preview p {
+  white-space: 0;
+  word-wrap: break-word;
+  line-height: 2em;
+  margin: 1em 0;
+}
+#afui #info .infobox #info_txt .markdown-text > :last-child,
+#afui #info .infobox #info_txt .preview > :last-child {
+  margin-bottom: 1em;
+}
+#afui #info .infobox #info_txt .markdown-text li,
+#afui #info .infobox #info_txt .preview li {
+  font-size: 14px;
+  line-height: 2em;
+}
+#afui #info .infobox #info_txt .markdown-text li code,
+#afui #info .infobox #info_txt .markdown-text p code,
+#afui #info .infobox #info_txt .preview li code,
+#afui #info .infobox #info_txt .preview p code {
+  color: #000;
+  background-color: #fcfafa;
+  padding: 4px 6px;
+}
+#afui #info .discuss #box_discuss_list li {
+  padding: 10px;
+  border-bottom: 1px solid #f4f4f4;
+  color: #7a7c80;
+}
+#afui #info .discuss #box_discuss_list li .tx {
+  width: 2em;
+  height: 2em;
+  float: left;
+  margin-right: 15px;
+}
+#afui #info .discuss #box_discuss_list li .tx img {
+  width: 2em;
+  height: 2em;
+  border-radius: 2em;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+#afui #info .discuss #box_discuss_list li .nr p {
+  margin: 0px;
+}
+#afui .list.inset {
+  border-radius: 0px;
+}
+#infinite {
+ height:60px;line-height:60px;font-weight:bold;text-align:center
+}

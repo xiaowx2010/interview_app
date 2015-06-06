@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<script src="cordova.js"></script>
+	
+	<link rel="stylesheet" href="libs/style/icons.css">
+  	<link rel="stylesheet" href="libs/style/af.ui.base.css">
+	<link rel="stylesheet" href="icon/iconfont.css">
+	
+	<script src="libs/jq/jquery-2.1.1.min.js"></script>
+	<script src="libs/jq/af.ui.jquery.min.js"></script>
+
+	<script src="script/plugins/template-native.js"></script>
+	<script src="script/plugins/template_help.js"></script>
+	
+	<script src="script/plugins/jquery.unveil.js"></script>
+	<script src="script/plugins/rightTransition.js"></script>
+	
+	<script src="script/common.js"></script>
+	
+	
+	
+	<script src="script/af_init.js"></script>
+	
+	<script src="script/CNode.js"></script>
+
+	<script src="script/script.js"></script>
+
+	<link rel="stylesheet" href="style/style.css">
+</head>
+
+
+<body>
+
+	<div id="afui">
+	
+		<div id="splashscreen" class='ui-loader heavy'>
+			<img id="img_startup" src="" />
+			<br>
+			掌中九江
+			<br>
+			<br>
+			<br>
+        </div>
+
+		<div id="header">
+            <a href="#" onclick="$.ui.toggleSideMenu()" class="menuButton">123</a>
+			<!--<h1 id="logo"></h1>-->
+		</div>
+		
+		<header id="info_header">
+			<a href="#" class="backButton button"></a>
+			<h1>详情</h1>
+		</header>
+		
+		<header id="main_header">
+			<a href="#" onclick="$.ui.toggleSideMenu()" class="menuButton"></a>
+			<!--<h1 id="logo"></h1>-->
+		</header>
+		
+		<div id="content">
+		
+			<script type="text/html" id="temp_hot_list">
+				<%for(var i=0,j=data.length; i<j; i++){%>
+					<li>
+						<div class="cnode_box">
+							<div class="cnode_header clearfix">
+								<div class="avater p_fl"><img class="unveil" src="<%=data[i].item_small_pic%>" ></div>
+								<div class="name p_fl"><%=data[i].post_date%></div>
+							</div>
+							<div class="cnode_content">
+								<p rel="<%=data[i].post_link%>" class="go_info"><%=data[i].post_title%></p>
+							</div>
+						</div>
+					</li>
+				<%}%>
+			</script>
+
+			<div id="main" class="panel" selected="true" data-header="main_header" data-load="main_load" data-unload="main_unload" data-tab="f_main" page="1">
+				<div class="p_pt10">
+					<ul class="card" id="box_hot_list">
+						<li>
+							<div class="cnode_box">
+								<div class="cnode_header clearfix">
+									<div class="status p_fr">加载中...</div>
+									<div class="p_fl clearfix ">
+										<div class="avater p_fl"><img src="res/tx1.jpg" alt="加载中..."></div>
+										<div class="name p_fl">加载中...</div>
+									</div>
+								</div>
+								<div class="cnode_content">
+									<p>加载中...</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div id='infinite'>Load More</div>
+				</div>
+			</div>
+
+			<div id="share" class="panel" data-header="main_header" data-load="share_load" data-unload="share_unload" data-tab="f_share">
+				<div class="p_pt10">
+					<ul class="card" id="box_share_list">
+						<li>
+							<div class="cnode_box">
+								<div class="cnode_header clearfix">
+									<div class="status p_fr">加载中...</div>
+									<div class="p_fl clearfix ">
+										<div class="avater p_fl"><img src="res/tx1.jpg" alt="加载中..."></div>
+										<div class="name p_fl">加载中...</div>
+									</div>
+								</div>
+								<div class="cnode_content">
+									<p>加载中...</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="ask" class="panel" data-header="main_header" data-load="ask_load" data-unload="ask_unload" data-tab="f_ask">
+				<div class="p_pt10">
+					<ul class="card" id="box_ask_list">
+						<li>
+							<div class="cnode_box">
+								<div class="cnode_header clearfix">
+									<div class="status p_fr">加载中...</div>
+									<div class="p_fl clearfix ">
+										<div class="avater p_fl"><img src="res/tx1.jpg" alt="加载中..."></div>
+										<div class="name p_fl">加载中...</div>
+									</div>
+								</div>
+								<div class="cnode_content">
+									<p>加载中...</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="jobs" class="panel" data-header="main_header" data-load="jobs_load" data-unload="jobs_unload" data-tab="f_jobs">
+				<div class="p_pt10">
+					<ul class="card" id="box_jobs_list">
+						<li>
+							<div class="cnode_box">
+								<div class="cnode_header clearfix">
+									<div class="status p_fr">加载中...</div>
+									<div class="p_fl clearfix ">
+										<div class="avater p_fl"><img src="res/tx1.jpg" alt="加载中..."></div>
+										<div class="name p_fl">加载中...</div>
+									</div>
+								</div>
+								<div class="cnode_content">
+									<p>加载中...</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+		</div>
+
+        <!-- footer -->
+		<div id="navbar">
+			<a href="#main" id="f_main"><i class="iconfont" style="font-size:27px">&#xe601;</i>全部</a>
+			<a href="#share" id="f_share"><i class="iconfont" style="font-size:27px">&#xe603;</i>分享</a>
+			<a href="#ask" id="f_ask"><i class="iconfont" style="font-size:27px">&#xe600;</i>问答</a>
+			<a href="#jobs" id="f_jobs"><i class="iconfont" style="font-size:27px">&#xe602;</i>招聘</a>
+		</div>
+        
+        <!-- 左侧边栏 -->
+		<nav>
+			<h3>左侧边栏</h3>
+		</nav>
+        
+        <!-- 右侧边栏 -->
+		<aside>
+			<h3>右侧边栏</h3>
+		</aside>
+
+	</div>
+
+
+</body>
+</html>
