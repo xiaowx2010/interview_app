@@ -1,4 +1,18 @@
 
+$(document).ready(function(){
+  slider = $('.bxslider').bxSlider({
+  	mode: 'fade',
+    auto: true,
+    pause: 5000,
+    speed: 1000,
+    controls: false,
+    captions: true
+  });
+
+  $(".bx-controls").hide();
+  $(".bx-viewport").css('position', 'initial');
+});
+
 function pops( poptext ){
 	var pops_opts = {
 		id: "pops",
@@ -20,14 +34,11 @@ function setInfoTit( str ){
 
 
 
-
-
-
 function main_load(){
 
 	if( main_status == true ){
 	}else{
-		$.ui.showMask("加载中main_load...");
+		$.ui.showMask("加载中...");
 		update_news_list(API_News_List, "box_hot_list");
 		setupListUpdate("main", "box_hot_list");
 	}
@@ -61,21 +72,25 @@ function share_load(){
 
 	if( share_status == true ){
 	}else{
-		$.ui.showMask("加载中share_load...");
-//		$.getJSON( API_hotlist + "?tab=share" ,function(data){
-		$.getJSON( API_News_List ,function(data){
-			var temp = template('temp_hot_list', data);
-			$("#box_share_list").html(temp);
-			share_status = true;
-			$("#share img.unveil").unveil();
+		$.ui.showMask("加载中...");
+
+		setTimeout(function() {
 			$.ui.hideMask();
-		});
-
-		shareScroll = $("#share").scroller();
-
-		$.bind( shareScroll, "scrollend", function(){
-			$("#box_share_list img.unveil").unveil();
-		})
+		}, 1000)
+//		$.getJSON( API_hotlist + "?tab=share" ,function(data){
+//		$.getJSON( API_News_List ,function(data){
+//			var temp = template('temp_hot_list', data);
+//			$("#box_share_list").html(temp);
+//			share_status = true;
+//			$("#share img.unveil").unveil();
+//			$.ui.hideMask();
+//		});
+//
+//		shareScroll = $("#share").scroller();
+//
+//		$.bind( shareScroll, "scrollend", function(){
+//			$("#box_share_list img.unveil").unveil();
+//		})
 	}
 
 	$(document).on("tap","#share .go_info", CNode.event.go_info );
@@ -106,21 +121,25 @@ function ask_load(){
 
 	if( ask_status == true ){
 	}else{
-		$.ui.showMask("加载中share_unload...");
-//		$.getJSON( API_hotlist + "?tab=ask" ,function(data){
-		$.getJSON( API_News_List ,function(data){
-			var temp = template('temp_hot_list', data);
-			$("#box_ask_list").html(temp);
-			ask_status = true;
-			$("#ask img.unveil").unveil();
+		$.ui.showMask("加载中...");
+
+		setTimeout(function() {
 			$.ui.hideMask();
-		});
-
-		shareScroll = $("#ask").scroller();
-
-		$.bind( shareScroll, "scrollend", function(){
-			$("#box_ask_list img.unveil").unveil();
-		})
+		}, 1000)
+//		$.getJSON( API_hotlist + "?tab=ask" ,function(data){
+//		$.getJSON( API_News_List ,function(data){
+//			var temp = template('temp_hot_list', data);
+//			$("#box_ask_list").html(temp);
+//			ask_status = true;
+//			$("#ask img.unveil").unveil();
+//			$.ui.hideMask();
+//		});
+//
+//		shareScroll = $("#ask").scroller();
+//
+//		$.bind( shareScroll, "scrollend", function(){
+//			$("#box_ask_list img.unveil").unveil();
+//		})
 	}
 
 	$(document).on("tap","#ask .go_info", CNode.event.go_info );
@@ -152,21 +171,25 @@ function jobs_load(){
 
 	if( jobs_status == true ){
 	}else{
-		$.ui.showMask("加载中jobs_load...");
-//		$.getJSON( API_hotlist + "?tab=job" ,function(data){
-		$.getJSON( API_News_List ,function(data){
-			var temp = template('temp_hot_list', data);
-			$("#box_jobs_list").html(temp);
-			jobs_status = true;
-			$("#jobs img.unveil").unveil();
-			$.ui.hideMask();
-		});
+		$.ui.showMask("加载中...");
 
-		jobsScroll = $("#jobs").scroller();
-	
-		$.bind( jobsScroll, "scrollend", function(){
-			$("#box_jobs_list img.unveil").unveil();
-		})
+		setTimeout(function() {
+			$.ui.hideMask();
+		}, 1000)
+//		$.getJSON( API_hotlist + "?tab=job" ,function(data){
+//		$.getJSON( API_News_List ,function(data){
+//			var temp = template('temp_hot_list', data);
+//			$("#box_jobs_list").html(temp);
+//			jobs_status = true;
+//			$("#jobs img.unveil").unveil();
+//			$.ui.hideMask();
+//		});
+//
+//		jobsScroll = $("#jobs").scroller();
+//
+//		$.bind( jobsScroll, "scrollend", function(){
+//			$("#box_jobs_list img.unveil").unveil();
+//		})
 	}
 	
 	$(document).on("tap","#jobs .go_info", CNode.event.go_info );
@@ -219,8 +242,6 @@ function setupListUpdate(sc_control, ul_name){
 		$.bind(scrollerList, "refresh-release", function () {
 			var self = this;
 			update_news_list(API_News_List, ul_name);
-			var slider = $('.bxslider').bxSlider();
-			slider.reloadSlider();
 			$("#"+sc_control+"").attr('page',1);
 			self.hideRefresh();
 			return false; //tells it to not auto-cancel the refresh
@@ -242,6 +263,7 @@ function setupListUpdate(sc_control, ul_name){
 				$infinite.text("Load More");
 				self.clearInfinite();
 				$.ajaxSettings.async = true;
+				$('time').timeago();
 			});
 			return false;
 		});
@@ -264,19 +286,24 @@ function update_news_list(uri, tmp){
 		});
 		var ttt = template('temp_slides_list', {"error":0, "data":slides});
 		$("#pic_hot_list").html(ttt);
-
+		slider.reloadSlider();
+		$(".bx-controls").hide();
+  		$(".bx-viewport").css('position', 'initial');
 		var temp = template('temp_hot_list', {"error":0, "data":news});
 		$("#"+tmp+"").html(temp);
 
 		share_status = true;
 		$("#share img.unveil").unveil();
 		$.ui.hideMask();
+  		$('time').timeago();
 	});
 	$.ajaxSettings.async = true;
+
 }
 function append_news(uri, tmp){
 	$.getJSON( uri ,function(data){
 		var temp = template('temp_hot_list', data);
 		$("#"+tmp+" ul").append(temp);
+		$('time').timeago();
 	});
 }
