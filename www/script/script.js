@@ -26,7 +26,6 @@ function setInfoTit( str ){
 function main_load(){
 
 	if( main_status == true ){
-		console.log("已加载");
 	}else{
 		$.ui.showMask("加载中main_load...");
 		update_news_list(API_News_List, "box_hot_list");
@@ -36,12 +35,10 @@ function main_load(){
 	$(document).on("tap","#main .go_info", CNode.event.go_info );
 
 	$("#main").bind("swipeLeft",function(){
-		console.log("#main 左滑动");
 		$.ui.loadContent("#share",false,false,"slide");
 	})
 
 	$("#main").bind("swipeRight",function(){
-		console.log("#main 右滑动");
 		$.ui.loadContent("#jobs",false,false,"right");
 	})
 
@@ -63,7 +60,6 @@ function main_unload(){
 function share_load(){
 
 	if( share_status == true ){
-		console.log("已加载");
 	}else{
 		$.ui.showMask("加载中share_load...");
 //		$.getJSON( API_hotlist + "?tab=share" ,function(data){
@@ -85,12 +81,10 @@ function share_load(){
 	$(document).on("tap","#share .go_info", CNode.event.go_info );
 
 	$("#share").bind("swipeLeft",function(){
-		console.log("#share 左滑动");
 		$.ui.loadContent("#ask",false,false,"slide");
 	})
 
 	$("#share").bind("swipeRight",function(){
-		console.log("#share 右滑动");
 		$.ui.loadContent("#main",false,false,"right");
 	})
 
@@ -111,7 +105,6 @@ function share_unload(){
 function ask_load(){
 
 	if( ask_status == true ){
-		console.log("已加载");
 	}else{
 		$.ui.showMask("加载中share_unload...");
 //		$.getJSON( API_hotlist + "?tab=ask" ,function(data){
@@ -133,12 +126,10 @@ function ask_load(){
 	$(document).on("tap","#ask .go_info", CNode.event.go_info );
 
 	$("#ask").bind("swipeLeft",function(){
-		console.log("#ask 左滑动");
 		$.ui.loadContent("#jobs",false,false,"slide");
 	})
 
 	$("#ask").bind("swipeRight",function(){
-		console.log("#ask 右滑动");
 		$.ui.loadContent("#share",false,false,"right");
 	})
 
@@ -160,7 +151,6 @@ function jobs_load(){
 
 
 	if( jobs_status == true ){
-		console.log("已加载");
 	}else{
 		$.ui.showMask("加载中jobs_load...");
 //		$.getJSON( API_hotlist + "?tab=job" ,function(data){
@@ -182,12 +172,10 @@ function jobs_load(){
 	$(document).on("tap","#jobs .go_info", CNode.event.go_info );
 	
 	$("#jobs").bind("swipeLeft",function(){
-		console.log("#jobs 左滑动");
 		$.ui.loadContent("#main",false,false,"slide");
 	})
 	
 	$("#jobs").bind("swipeRight",function(){
-		console.log("#jobs 右滑动");
 		$.ui.loadContent("#ask",false,false,"right");
 	})
 	
@@ -208,7 +196,6 @@ function info_load(){
 
 	$("#box_discuss_list img.unveil").unveil();
 	if( info_status == true ){
-		console.log("无需重复绑定");
 	}else{
 		infoScroll = $("#info").scroller();
 		$.bind( infoScroll, "scrollend", function(){
@@ -222,11 +209,10 @@ function info_load(){
 }
 
 function info_unload(){
-	console.log("11");
 }
 
 
-function setupListUpdate(sc_control ul_name){
+function setupListUpdate(sc_control, ul_name){
 		var scrollerList = $("#"+sc_control+"").scroller();
 
 		scrollerList.addPullToRefresh();
@@ -240,7 +226,6 @@ function setupListUpdate(sc_control ul_name){
 
 		scrollerList.addInfinite();
 		$.bind(scrollerList, "infinite-scroll", function () {
-			console.log("infinite-scroll");
 			var self = this;
 			$infinite = $("#"+sc_control+"").find("#infinite");
 			$infinite.text("Loading...")
@@ -252,7 +237,6 @@ function setupListUpdate(sc_control ul_name){
 				var temp = template('temp_hot_list', data);
 				$("#"+ul_name+"").append(temp);
 				$("#"+sc_control+"").attr('page', page);
-				console.log("update list:"+page);
 				$infinite.text("Load More");
 				self.clearInfinite();
 				$.ajaxSettings.async = true;
@@ -264,8 +248,24 @@ function setupListUpdate(sc_control ul_name){
 }
 
 function update_news_list(uri, tmp){
-	$.getJSON( uri ,function(data){
-		var temp = template('temp_hot_list', data);
+
+	$.getJSON( uri ,function(result){
+		var slides = [];
+		var news = [];
+		$(result.data).each(function(i, obj) {
+			if(obj.post_hd=="1"){
+				slides.push(obj);
+			}
+			else{
+				news.push(obj);
+			}
+		});
+		var ttt = template('temp_slides_list', {"error":0, "data":slides});
+		$("#pic_hot_list").html(ttt);
+		var slider = $('.bxslider').bxSlider();
+		slider.reloadSlider();
+
+		var temp = template('temp_hot_list', {"error":0, "data":news});
 		$("#"+tmp+"").html(temp);
 
 		share_status = true;
@@ -273,7 +273,6 @@ function update_news_list(uri, tmp){
 		$.ui.hideMask();
 	});
 }
-
 function append_news(uri, tmp){
 	$.getJSON( uri ,function(data){
 		var temp = template('temp_hot_list', data);

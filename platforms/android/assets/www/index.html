@@ -17,6 +17,11 @@
 	<script src="libs/jq/jquery-2.1.1.min.js"></script>
 	<script src="libs/jq/af.ui.jquery.min.js"></script>
 
+	<!-- bxSlider Javascript file -->
+	<script src="libs/bxslider/jquery.bxslider.min.js"></script>
+	<!-- bxSlider CSS file -->
+	<link href="libs/bxslider/jquery.bxslider.css" rel="stylesheet" />
+
 	<script src="script/plugins/template-native.js"></script>
 	<script src="script/plugins/template_help.js"></script>
 	
@@ -69,21 +74,35 @@
 		
 			<script type="text/html" id="temp_hot_list">
 				<%for(var i=0,j=data.length; i<j; i++){%>
-					<li>
+					<li rel="<%=data[i].post_link%>" class="go_info">
 						<div class="cnode_box">
 							<div class="cnode_header clearfix">
 								<div class="avater p_fl"><img class="unveil" src="<%=data[i].item_small_pic%>" ></div>
 								<div class="name p_fl"><%=data[i].post_date%></div>
 							</div>
 							<div class="cnode_content">
-								<p rel="<%=data[i].post_link%>" class="go_info"><%=data[i].post_title%></p>
+								<%=data[i].post_title%>
 							</div>
 						</div>
 					</li>
 				<%}%>
 			</script>
 
+
+			<script type="text/html" id="temp_slides_list">
+				<%for(var i=0,j=data.length; i<j; i++){%>
+					<li rel="<%=data[i].post_link%>" class="go_info">
+						<img src="<%=data[i].item_small_pic%>" title="<%=data[i].post_title%>" />
+					</li>
+				<%}%>
+			</script>
+
 			<div id="main" class="panel" selected="true" data-header="main_header" data-load="main_load" data-unload="main_unload" data-tab="f_main" page="1">
+				<div>
+					<ul class="bxslider card" id="pic_hot_list">
+
+					</ul>
+				</div>
 				<div class="p_pt10">
 					<ul class="card" id="box_hot_list">
 						<li>

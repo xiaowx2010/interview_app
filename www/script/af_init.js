@@ -1,31 +1,3 @@
-/**
- * 　　　┏┓　　　┏┓
- * 　　┏┛┻━━━┛┻┓
- * 　　┃　　　　　　　┃
- * 　　┃　　　━　　　┃
- * 　　┃　┳┛　┗┳　┃
- * 　　┃　　　　　　　┃
- * 　　┃　　　┻　　　┃
- * 　　┃　　　　　　　┃
- * 　　┗━┓　　　┏━┛
- * 　　　　┃　　　┃
- * 　　　　┃　　　┃
- * 　　　　┃　　　┗━━━┓
- * 　　　　┃　　　　　　　┣┓
- * 　　　　┃　　　　　　　┏┛
- * 　　　　┗┓┓┏━┳┓┏┛
- * 　　　　　┃┫┫　┃┫┫
- * 　　　　　┗┻┛　┗┻┛
- * ━━━━━━神兽保佑,代码无bug━━━━━━
- *
- *
- * @date		2014年11月10日 17:47:25
- * @author		por
- * @version		v 1.0.0
- * @email		675972282@qq.com
- *
- *
- */
 
 if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
     var script = document.createElement("script");
@@ -68,7 +40,12 @@ var init = function init() {
 		}else{
 			$.ui.availableTransitions["default"] = $.ui.availableTransitions.none;//
 		}
-		
+		$('.bxslider').bxSlider({
+		  mode: 'fade',
+          auto: true,
+          pause: 4000,
+          speed: 100
+        });
 	}, 2000)
 };
 document.addEventListener("DOMContentLoaded", init, false);
