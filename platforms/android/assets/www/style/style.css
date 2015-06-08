@@ -157,12 +157,12 @@ a:hover {
 #afui #navbar a {
   top: 0px;
   height: 49px;
-  line-height: 75px;
+  line-height: 49px;
 }
 #afui #navbar a .iconfont {
   position: absolute;
   top: 0px;
-  line-height: 35px;
+  line-height: 20px;
   left: 0;
   margin: auto;
   width: 100%;
@@ -215,14 +215,14 @@ a:hover {
   width: 100%;
 }
 #afui .cnode_box .cnode_header .avater {
-  width: 2em;
-  height: 2em;
+  width: 4em;
+  height: 4em;
   margin-right: 1em;
 }
 #afui .cnode_box .cnode_header .avater img {
-  width: 2em;
-  height: 2em;
-  border-radius: 2em;
+  width: 4em;
+  height: 4em;
+  border-radius: 4em;
   box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
 }
 #afui .cnode_box .cnode_header .name {
@@ -310,4 +310,26 @@ a:hover {
 }
 #infinite {
  height:60px;line-height:60px;font-weight:bold;text-align:center
+}
+.bx-wrapper{
+  margin: 0 auto 0;
+}
+
+#afui #header .gotop {
+  float: right;
+  width: 44px;
+  height: 44px;
+  top: 0px;
+  right: 0px;
+  padding-top: 10px;
+  padding-left: 5px;
+  color: white;
+}
+#afui #header .gotop:after {
+  top: 14px;
+  left: 12px;
+  width: 20px;
+}
+#afui #header .gotop.pressed {
+  background: #2c2c2c !important;
 }

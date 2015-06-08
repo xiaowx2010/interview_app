@@ -109,6 +109,3 @@ if ( getLS("test") && getLS("test_time") &&  ( getTimestamp - getLS("test_time")
 //		scrollerList.enable();
 //	});
 //}
-$(document).ready(function(){
-  $('.bxslider').bxSlider();
-});

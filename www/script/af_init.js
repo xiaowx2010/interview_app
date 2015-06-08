@@ -40,12 +40,6 @@ var init = function init() {
 		}else{
 			$.ui.availableTransitions["default"] = $.ui.availableTransitions.none;//
 		}
-		$('.bxslider').bxSlider({
-		  mode: 'fade',
-          auto: true,
-          pause: 4000,
-          speed: 100
-        });
 	}, 2000)
 };
 document.addEventListener("DOMContentLoaded", init, false);

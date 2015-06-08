@@ -22,6 +22,9 @@
 	<!-- bxSlider CSS file -->
 	<link href="libs/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
+	<script src="libs/timeago/timeago.js"></script>
+	<script src="libs/timeago/timeago.zh-cn.js"></script>
+
 	<script src="script/plugins/template-native.js"></script>
 	<script src="script/plugins/template_help.js"></script>
 	
@@ -67,7 +70,8 @@
 		
 		<header id="main_header">
 			<a href="#" onclick="$.ui.toggleSideMenu()" class="menuButton"></a>
-			<!--<h1 id="logo"></h1>-->
+			<h1>掌中九江</h1>
+			<a class="gotop"  onclick="$.ui.scrollToTop('main')">Top</a>
 		</header>
 		
 		<div id="content">
@@ -78,11 +82,9 @@
 						<div class="cnode_box">
 							<div class="cnode_header clearfix">
 								<div class="avater p_fl"><img class="unveil" src="<%=data[i].item_small_pic%>" ></div>
-								<div class="name p_fl"><%=data[i].post_date%></div>
+								<div class="cnode_content"><%=data[i].post_title%></div>
 							</div>
-							<div class="cnode_content">
-								<%=data[i].post_title%>
-							</div>
+							<time class="timeago"  style="float: right;margin-top: -11px;font-size: small;" datetime="<%=data[i].post_date%>"></time>
 						</div>
 					</li>
 				<%}%>
@@ -98,8 +100,8 @@
 			</script>
 
 			<div id="main" class="panel" selected="true" data-header="main_header" data-load="main_load" data-unload="main_unload" data-tab="f_main" page="1">
-				<div>
-					<ul class="bxslider card" id="pic_hot_list">
+				<div style="margin-top: 10px;">
+					<ul class="bxslider" id="pic_hot_list">
 
 					</ul>
 				</div>
@@ -126,64 +128,19 @@
 
 			<div id="share" class="panel" data-header="main_header" data-load="share_load" data-unload="share_unload" data-tab="f_share">
 				<div class="p_pt10">
-					<ul class="card" id="box_share_list">
-						<li>
-							<div class="cnode_box">
-								<div class="cnode_header clearfix">
-									<div class="status p_fr">加载中...</div>
-									<div class="p_fl clearfix ">
-										<div class="avater p_fl"><img src="res/tx1.jpg" alt="加载中..."></div>
-										<div class="name p_fl">加载中...</div>
-									</div>
-								</div>
-								<div class="cnode_content">
-									<p>加载中...</p>
-								</div>
-							</div>
-						</li>
-					</ul>
+					更多城事敬请期待！
 				</div>
 			</div>
 
-			<div id="ask" class="panel" data-header="main_header" data-load="ask_load" data-unload="ask_unload" data-tab="f_ask">
+			<div id="ask" class="panel" data-header="main_header"  data-load="ask_load" data-unload="ask_unload" data-tab="f_ask">
 				<div class="p_pt10">
-					<ul class="card" id="box_ask_list">
-						<li>
-							<div class="cnode_box">
-								<div class="cnode_header clearfix">
-									<div class="status p_fr">加载中...</div>
-									<div class="p_fl clearfix ">
-										<div class="avater p_fl"><img src="res/tx1.jpg" alt="加载中..."></div>
-										<div class="name p_fl">加载中...</div>
-									</div>
-								</div>
-								<div class="cnode_content">
-									<p>加载中...</p>
-								</div>
-							</div>
-						</li>
-					</ul>
+					更多直播敬请期待！
 				</div>
 			</div>
 
-			<div id="jobs" class="panel" data-header="main_header" data-load="jobs_load" data-unload="jobs_unload" data-tab="f_jobs">
+			<div id="jobs" class="panel" data-header="main_header"  data-load="jobs_load" data-unload="jobs_unload" data-tab="f_jobs">
 				<div class="p_pt10">
-					<ul class="card" id="box_jobs_list">
-						<li>
-							<div class="cnode_box">
-								<div class="cnode_header clearfix">
-									<div class="status p_fr">加载中...</div>
-									<div class="p_fl clearfix ">
-										<div class="avater p_fl"><img src="res/tx1.jpg" alt="加载中..."></div>
-										<div class="name p_fl">加载中...</div>
-									</div>
-								</div>
-								<div class="cnode_content">
-									<p>加载中...</p>
-								</div>
-							</div>
-						</li>
-					</ul>
+					更多星闻敬请期待！
 				</div>
 			</div>
 
@@ -192,15 +149,16 @@
 
         <!-- footer -->
 		<div id="navbar">
-			<a href="#main" id="f_main"><i class="iconfont" style="font-size:27px">&#xe601;</i>全部</a>
-			<a href="#share" id="f_share"><i class="iconfont" style="font-size:27px">&#xe603;</i>分享</a>
-			<a href="#ask" id="f_ask"><i class="iconfont" style="font-size:27px">&#xe600;</i>问答</a>
-			<a href="#jobs" id="f_jobs"><i class="iconfont" style="font-size:27px">&#xe602;</i>招聘</a>
+			<a href="#main" id="f_main">头条</a>
+			<a href="#share" id="f_share">城事</a>
+			<a href="#ask" id="f_ask">直播</a>
+			<a href="#jobs" id="f_jobs">星闻</a>
 		</div>
         
         <!-- 左侧边栏 -->
 		<nav>
-			<h3>左侧边栏fgg</h3>
+			<br /><br /><br />
+			<h3>&nbsp;&nbsp;&nbsp;更多内容敬请期待</h3>
 		</nav>
         
         <!-- 右侧边栏 -->
@@ -209,7 +167,6 @@
 		</aside>
 
 	</div>
-
 
 </body>
 </html>
