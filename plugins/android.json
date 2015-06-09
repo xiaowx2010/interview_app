@@ -19,7 +19,7 @@
     },
     "installed_plugins": {
         "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "org.cnode.js"
+            "PACKAGE_NAME": "org.kevinxiao.newsdemo"
         }
     },
     "dependent_plugins": {}

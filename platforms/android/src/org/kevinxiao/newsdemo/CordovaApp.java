@@ -17,7 +17,7 @@
        under the License.
  */
 
-package org.cnode.js;
+package org.kevinxiao.newsdemo;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

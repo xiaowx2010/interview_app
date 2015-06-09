@@ -1,4 +1,18 @@
 F:\cordova\CNode\platforms\android\ant-build\classes.dex : \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$1.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$2.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$3.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$4$1.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$4.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$5$1.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$5$2.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$5$3.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$5$4.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$5.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser$InAppBrowserClient.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowser.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppBrowserDialog.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppChromeClient.class \
 F:\cordova\CNode\platforms\android\ant-build\classes\org\cnode\js\BuildConfig.class \
 F:\cordova\CNode\platforms\android\ant-build\classes\org\cnode\js\CordovaApp.class \
 F:\cordova\CNode\platforms\android\ant-build\classes\org\cnode\js\R$attr.class \
@@ -6,4 +20,11 @@ F:\cordova\CNode\platforms\android\ant-build\classes\org\cnode\js\R$drawable.cla
 F:\cordova\CNode\platforms\android\ant-build\classes\org\cnode\js\R$string.class \
 F:\cordova\CNode\platforms\android\ant-build\classes\org\cnode\js\R$xml.class \
 F:\cordova\CNode\platforms\android\ant-build\classes\org\cnode\js\R.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\kevinxiao\newsdemo\BuildConfig.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\kevinxiao\newsdemo\CordovaApp.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\kevinxiao\newsdemo\R$attr.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\kevinxiao\newsdemo\R$drawable.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\kevinxiao\newsdemo\R$string.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\kevinxiao\newsdemo\R$xml.class \
+F:\cordova\CNode\platforms\android\ant-build\classes\org\kevinxiao\newsdemo\R.class \
 F:\cordova\CNode\platforms\android\ant-build\dexedLibs\classes-12cbfb75b33939682ea8666e92da0fdc.jar \
